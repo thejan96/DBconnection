@@ -23,6 +23,32 @@ namespace Movie_rental
              conn.Open();
 
         }
+        
+         //Piumi: add customer to DB
+        public int addCustomer(Customer c)
+        {
+            try
+            {
+                cmd = new OracleCommand("addcus", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                //pass parameters
+                cmd.Parameters.Add("nic", OracleDbType.Varchar2).Value = c.Cus_nic;
+                cmd.Parameters.Add("tel", OracleDbType.Int32).Value = c.Cus_tel;
+                cmd.Parameters.Add("cus_name", OracleDbType.Varchar2).Value = c.Cus_name;
+                cmd.Parameters.Add("cus_adrs", OracleDbType.Varchar2).Value = c.Cus_address;
+
+                int addReturn = cmd.ExecuteNonQuery();
+                return addReturn;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+
+        }
 
 
              
