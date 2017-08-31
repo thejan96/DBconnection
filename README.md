@@ -21,6 +21,7 @@ namespace Movie_rental
         {
             conn = new OracleConnection("Data Source=App08;User ID=ifsapp;Password=ifsapp");
              conn.Open();
+			 njhlk;/l;.kl.
 
         }
         
