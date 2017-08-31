@@ -13,7 +13,7 @@ namespace Movie_rental
 {
     class DBconnection
     {
-        ArrayList setVal { get; set; }
+        ArrayList setVal { get; se; }
         OracleConnection conn;
         OracleCommand cmd;
 
